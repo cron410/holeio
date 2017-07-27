@@ -5,6 +5,8 @@ RUN pip install --no-cache-dir virtualenv && \
   apk add --no-cache bash git && \
   git clone https://github.com/anonfunc/holeio.git && \
   cd /holeio && ./install.sh
-  
-  
-CMD ["holeio/start.sh"]
+
+#https://stackoverflow.com/questions/20632258/docker-change-directory-command
+WORKDIR "/holeio"
+RUN /bin/sh -c "/holeio/install.sh"
+CMD ["/holeio/start.sh"]
