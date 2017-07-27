@@ -9,4 +9,5 @@ RUN pip install --no-cache-dir virtualenv && \
 #https://stackoverflow.com/questions/20632258/docker-change-directory-command
 WORKDIR "/holeio"
 RUN /bin/sh -c "/holeio/install.sh"
+EXPOSE 8080
 CMD ["/holeio/start.sh"]
