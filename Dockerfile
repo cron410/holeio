@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir virtualenv && \
 WORKDIR "/holeio"
 RUN /bin/sh -c "/holeio/install.sh"
 EXPOSE 8080
-CMD ["/holeio/start.sh"]
+CMD ["/bin/sh -c /holeio/start.sh && tail -f holeio/holeio.log"]
