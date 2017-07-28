@@ -1,4 +1,4 @@
-FROM python:3.4-alpine
+FROM python:2.7-alpine
 
 RUN pip install --no-cache-dir virtualenv && \
   apk update && apk upgrade && \
