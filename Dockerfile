@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir virtualenv && \
 WORKDIR "/holeio"
 RUN /bin/sh -c "/holeio/install.sh"
 EXPOSE 8080
-CMD ["/bin/sh -c /holeio/start.sh && tail -f holeio/holeio.log"]
+CMD ["bottle.py","-b","0.0.0.0:8080","holeio.app"]
